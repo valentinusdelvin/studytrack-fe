@@ -70,6 +70,51 @@ a {
   margin-top: 4px;
 }
 
+.task-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.task-deadline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+}
+
+.task-actions {
+  text-align: right;
+  max-width: 100%;
+}
+
+.task-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+@media (max-width: 520px) {
+  .task-card {
+    flex-direction: column;
+  }
+
+  .task-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .task-buttons {
+    justify-content: flex-start;
+    margin-top: 0;
+  }
+}
+
 .badge {
   display: inline-block;
   padding: 2px 10px;
@@ -79,13 +124,23 @@ a {
 }
 
 .badge.belum {
-  background: #fef3c7;
-  color: #92400e;
+  background: #eef0f3;
+  color: #4b5563;
 }
 
 .badge.selesai {
   background: #d1fae5;
   color: #065f46;
+}
+
+.badge.due-soon {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge.overdue {
+  background: #fee2e2;
+  color: #991b1b;
 }
 
 form {
