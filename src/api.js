@@ -5,11 +5,11 @@ export const TOKEN_KEY = "studytrack_token";
 
 /**
  * Instance axios untuk seluruh pemanggilan API backend.
- * Pada mode development, request `/api/*` di-proxy ke backend oleh Vite
- * (lihat `vite.config.js`).
+ * Base URL diambil dari env `VITE_API_URL` agar bisa dikonfigurasi
+ * baik di local maupun di Vercel tanpa hardcode.
  */
 const api = axios.create({
-  baseURL: "/api"
+  baseURL: `${import.meta.env.VITE_API_URL}/api`
 });
 
 // Menyisipkan token login ke setiap request jika tersedia.
